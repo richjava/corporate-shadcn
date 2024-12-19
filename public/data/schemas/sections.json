@@ -1,0 +1,96 @@
+{
+  "sections": {
+    "header": {
+      "name": "header",
+      "fields": {
+        "links": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "label": {
+                "type": "string",
+                "required": true
+              },
+              "href": {
+                "type": "string",
+                "required": true
+              }
+            }
+          }
+        }
+      }
+    },
+    "footer": {
+      "name": "footer",
+      "fields": {
+        "columns": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "title": {
+                "type": "string",
+                "required": true
+              },
+              "links": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "label": {
+                      "type": "string",
+                      "required": true
+                    },
+                    "href": {
+                      "type": "string",
+                      "required": true
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "contactInfo": {
+          "type": "object",
+          "properties": {
+            "address": {
+              "type": "string"
+            },
+            "city": {
+              "type": "string"
+            },
+            "email": {
+              "type": "string"
+            },
+            "phone": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "homeLanding": {
+      "name": "homeLanding",
+      "fields": {
+        "heading": {
+          "type": "string",
+          "required": true
+        },
+        "blurb": {
+          "type": "text"
+        },
+        "primaryButtonText": {
+          "type": "string"
+        },
+        "secondaryButtonText": {
+          "type": "string"
+        },
+        "image": {
+          "type": "image"
+        }
+      }
+    }
+  }
+}

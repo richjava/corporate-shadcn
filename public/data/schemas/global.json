@@ -1,0 +1,48 @@
+{
+  "global": {
+    "fields": {
+      "name": {
+        "type": "string",
+        "required": true,
+        "default": "Corporate ShadCN"
+      },
+      "description": {
+        "type": "text"
+      },
+      "logo": {
+        "type": "image"
+      },
+      "contact": {
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string"
+          },
+          "phone": {
+            "type": "string"
+          },
+          "address": {
+            "type": "string"
+          },
+          "city": {
+            "type": "string"
+          }
+        }
+      },
+      "social": {
+        "type": "object",
+        "properties": {
+          "twitter": {
+            "type": "string"
+          },
+          "facebook": {
+            "type": "string"
+          },
+          "linkedin": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

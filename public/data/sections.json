@@ -1,0 +1,75 @@
+{
+  "sections": [
+    {
+      "name": "homeLanding",
+      "title": "Home Landing",
+      "description": "The home page landing area, showcasing the main value proposition.",
+      "data": {
+        "heading": "Transform Your Business with Modern Solutions",
+        "blurb": "Empower your organization with cutting-edge technology and expert consulting services. We help businesses thrive in the digital age.",
+        "primaryButtonText": "Get Started",
+        "secondaryButtonText": "Learn More",
+        "image": {
+          "url": "https://images.unsplash.com/photo-1551434678-e076c223a692",
+          "width": 2400,
+          "height": 1600
+        }
+      },
+      "templates": ["cover1"],
+      "type": "body",
+      "defaultTemplate": { "name": "cover1" }
+    },
+    {
+      "name": "header",
+      "title": "Header",
+      "description": "The main navigation header of the website.",
+      "data": {
+        "links": [
+          { "label": "Home", "href": "/" },
+          { "label": "About", "href": "/about" },
+          { "label": "Services", "href": "/services" },
+          { "label": "Contact", "href": "/contact" }
+        ]
+      },
+      "templates": ["header1"],
+      "type": "layout",
+      "defaultTemplate": { "name": "header1" }
+    },
+    {
+      "name": "footer",
+      "title": "Footer",
+      "description": "The main footer of the website.",
+      "data": {
+        "columns": [
+          {
+            "title": "Quick Links",
+            "links": [
+              { "label": "Home", "href": "/" },
+              { "label": "About", "href": "/about" },
+              { "label": "Services", "href": "/services" },
+              { "label": "Contact", "href": "/contact" }
+            ]
+          },
+          {
+            "title": "Services",
+            "links": [
+              { "label": "Consulting", "href": "#" },
+              { "label": "Development", "href": "#" },
+              { "label": "Analytics", "href": "#" },
+              { "label": "Marketing", "href": "#" }
+            ]
+          }
+        ],
+        "contactInfo": {
+          "address": "123 Business Street",
+          "city": "City, State 12345",
+          "email": "contact@corporate-shadcn.com",
+          "phone": "(555) 123-4567"
+        }
+      },
+      "templates": ["footer1"],
+      "type": "layout",
+      "defaultTemplate": { "name": "footer1" }
+    }
+  ]
+}

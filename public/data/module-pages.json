@@ -1,0 +1,17 @@
+{
+  "modulePages": [
+    {
+      "name": "homeBase",
+      "description": "Main home page layout with landing section",
+      "page": {
+        "name": "home"
+      },
+      "sections": [
+        {
+          "name": "homeLanding",
+          "position": 1
+        }
+      ]
+    }
+  ]
+}

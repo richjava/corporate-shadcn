@@ -1,0 +1,15 @@
+{
+  "modules": [
+    {
+      "name": "introduce",
+      "title": "Introduce",
+      "description": "Familiarizes users with your product or service",
+      "required": true,
+      "modulePages": [
+        {
+          "name": "homeBase"
+        }
+      ]
+    }
+  ]
+}

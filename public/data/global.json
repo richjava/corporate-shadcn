@@ -1,0 +1,22 @@
+{
+  "global": {
+    "name": "Corporate ShadCN",
+    "description": "A modern corporate website template built with Next.js and ShadCN UI",
+    "logo": {
+      "url": "https://res.cloudinary.com/dn7feeelf/image/upload/v1725870579/builtjs_bert2m.svg",
+      "width": 45,
+      "height": 45
+    },
+    "contact": {
+      "email": "contact@corporate-shadcn.com",
+      "phone": "(555) 123-4567",
+      "address": "123 Business Street",
+      "city": "City, State 12345"
+    },
+    "social": {
+      "twitter": "https://twitter.com",
+      "facebook": "https://facebook.com",
+      "linkedin": "https://linkedin.com"
+    }
+  }
+}

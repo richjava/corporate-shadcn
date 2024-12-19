@@ -1,0 +1,20 @@
+{
+  "theme": {
+    "namespace": "richjava_corporate-shad-cn",
+    "title": "Corporate ShadCN",
+    "description": "A modern corporate website theme built with Next.js and ShadCN UI.",
+    "plugins": ["richjava_social-proof-shad-cn", "richjava_about-shad-cn"],
+    "designSystem": "shadCN",
+    "config": {
+      "dependencies": [
+        "@radix-ui/react-navigation-menu",
+        "@radix-ui/react-slot",
+        "class-variance-authority",
+        "clsx",
+        "lucide-react",
+        "next-themes",
+        "tailwind-merge"
+      ]
+    }
+  }
+}
