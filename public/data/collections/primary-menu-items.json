@@ -1,0 +1,10 @@
+{
+  "data": [
+    {
+      "slug": "home",
+      "_type": "primaryMenuItem",
+      "label": "Home",
+      "url": "/"
+    }
+  ]
+}

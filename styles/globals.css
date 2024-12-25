@@ -1,3 +1,5 @@
+@import './plugins/richjava_social-proof-shad-cn/globals.css';
+@import './plugins/richjava_about-shad-cn/globals.css';
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

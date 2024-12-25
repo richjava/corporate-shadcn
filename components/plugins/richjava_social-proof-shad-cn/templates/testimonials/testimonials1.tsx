@@ -2,7 +2,6 @@ import { TestimonialsContent } from './types'
 import { TestimonialCard } from './testimonial-card'
 
 export default function Testimonials1({ content }: { content?: TestimonialsContent }) {
-  console.log({content})
   const heading = content?.data?.heading || "What Our Clients Say"
   const blurb = content?.data?.blurb || "Don't just take our word for it - hear from our satisfied customers"
   const testimonials = content?.collections?.testimonial || [];

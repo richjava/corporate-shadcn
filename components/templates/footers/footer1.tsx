@@ -27,6 +27,7 @@ interface FooterContent {
 export default function Footer1({ content }: { content?: FooterContent }) {
   const { data, global } = content || {};
   const currentYear = new Date().getFullYear();
+  console.log('footer')
 console.log({content})
   return (
     <footer className="py-8 border-t md:py-12">

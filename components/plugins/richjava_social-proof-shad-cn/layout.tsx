@@ -2,7 +2,7 @@ import React from 'react';
 
 const Layout = (props: any) => {
   if (!props) return <></>;
-  const { children, layoutComps, page } = props;
+  const { children, layoutComps = [], page } = props;
   return (
     <>
       {page &&

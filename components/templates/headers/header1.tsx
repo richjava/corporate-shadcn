@@ -1,14 +1,12 @@
-"use client";
+import { Menu } from 'lucide-react';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
+import Image from 'next/image';
+import { widthForImage, heightForImage } from '@/lib/builtjs-utils';
 
-import Link from "next/link";
-import Image from "next/image";
-import { Button } from "@/components/ui/button";
-import { Building2 } from "lucide-react";
-import { widthForImage, heightForImage } from "@/lib/builtjs-utils";
-
-interface HeaderContent {
+interface HeaderProps {
   data?: {
-    links?: Array<{ label: string; href: string }>;
+    title?: string;
   };
   global?: {
     name?: string;
@@ -18,49 +16,57 @@ interface HeaderContent {
       height: number;
     };
   };
+  collections?: {
+    primaryMenuItem?: Array<{
+      label: string;
+      url: string;
+    }>;
+  };
 }
 
-export default function Header1({ content }: { content?: HeaderContent }) {
-  const { data, global } = content || {};
-  const links = data?.links || [
-    { label: "Home", href: "/" },
-    { label: "About", href: "/about" },
-    { label: "Services", href: "/services" },
-    { label: "Contact", href: "/contact" },
+export default function Header1({ content }: { content?: HeaderProps }) {
+  const router = useRouter();
+  const title = content?.global?.name || 'Social Proof ShadCN';
+  const logo = content?.global?.logo;
+  const menuItems = content?.collections?.primaryMenuItem || [
+    { label: 'Home', url: '/' },
+    { label: 'About', url: '/about' },
   ];
 
   return (
     <header className="border-b">
-      <div className="container flex h-16 items-center justify-between px-4 md:px-8">
-        <div className="flex items-center gap-2">
-          {global?.logo ? (
-            <Image
-              src={global.logo.url}
-              alt={global.name || "Logo"}
-              width={widthForImage(global.logo)}
-              height={heightForImage(global.logo)}
-            />
-          ) : (
-            <Building2 className="h-6 w-6" />
-          )}
-          <span className="text-xl font-bold">{global?.name || "Corporate ShadCN"}</span>
-        </div>
-        <nav className="hidden md:flex items-center gap-6">
-          {links.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="text-sm font-medium hover:underline"
-            >
-              {link.label}
+      <div className="container px-4 mx-auto sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-16">
+          <div className="flex items-center">
+            <Link href="/" className="flex items-center space-x-2">
+              {logo && (
+                <Image
+                  src={logo.url}
+                  alt={title}
+                  width={widthForImage(logo)}
+                  height={heightForImage(logo)}
+                  className="w-auto h-8"
+                />
+              )}
+              <span className="text-xl font-bold">{title}</span>
             </Link>
-          ))}
-        </nav>
-        <div className="flex items-center gap-4">
-          <Button variant="outline" size="sm">
-            Log in
-          </Button>
-          <Button size="sm">Get Started</Button>
+          </div>
+          <nav className="items-center hidden space-x-8 md:flex">
+            {menuItems.map((item, index) => (
+              <Link
+                key={index}
+                href={item.url}
+                className={`text-gray-600 hover:text-gray-900 ${router.pathname === item.url ? 'font-bold text-gray-900' : ''}`}
+              >
+                {item.label}
+              </Link>
+            ))}
+          </nav>
+          <div className="md:hidden">
+            <button className="p-2">
+              <Menu className="w-6 h-6" />
+            </button>
+          </div>
         </div>
       </div>
     </header>
