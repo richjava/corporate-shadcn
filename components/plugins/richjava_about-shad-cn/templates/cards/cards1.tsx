@@ -32,6 +32,7 @@ interface TeamSectionProps {
 }
 
 export default function TeamSection({ content }: TeamSectionProps) {
+  console.log({content})
   const heading = content?.data?.heading || 'Meet Our Team'
   const team = content?.collections?.teamMember || []
 

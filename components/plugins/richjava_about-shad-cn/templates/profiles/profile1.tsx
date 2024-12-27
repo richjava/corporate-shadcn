@@ -4,7 +4,7 @@ import { widthForImage, heightForImage } from '@/lib/builtjs-utils'
 
 interface TeamMemberProfileProps {
   content?: {
-    data?: {
+    entry?: {
       fullName?: string;
       profile?: {
         title?: string;
@@ -21,10 +21,9 @@ interface TeamMemberProfileProps {
 }
 
 export default function TeamMemberProfile({ content }: TeamMemberProfileProps) {
-  if (!content || !content.data) return <></>;
-  const { data: member } = content;
-
-  if (!member?.profile) return <></>;
+  if (!content) return <></>;
+  let { entry: member = null } = { ...content };
+  if (!member) return <></>;
 
   return (
     <section id="profile1" className="py-20">

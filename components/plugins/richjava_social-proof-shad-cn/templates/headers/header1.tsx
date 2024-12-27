@@ -28,7 +28,10 @@ export default function Header1({ content }: { content?: HeaderProps }) {
   const router = useRouter();
   const title = content?.data?.title || content?.global?.name || 'Social Proof';
   const logo = content?.global?.logo;
-  const menuItems = content?.collections?.primaryMenuItem || [];
+  const menuItems = content?.collections?.primaryMenuItem || [
+
+  ];
+  console.log({content})
 
   return (
     <header className="border-b">
