@@ -6,6 +6,7 @@
     "plugins": ["richjava_social-proof-shad-cn", "richjava_about-shad-cn"],
     "imageUrl": "https://res.cloudinary.com/dn7feeelf/image/upload/v1733735967/builtjs/theme/richjava_corporate-shad-cn/home-cover1.png",
     "demoUrl": "https://corporate-shad-cn.vercel.app/",
+    "repoUrl": "https://github.com/richjava/corporate-shad-cn",
     "designSystem": "shadCN",
     "config": {
       "dependencies": [
