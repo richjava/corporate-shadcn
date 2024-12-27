@@ -21,9 +21,11 @@ interface TeamMemberProfileProps {
 }
 
 export default function TeamMemberProfile({ content }: TeamMemberProfileProps) {
+  console.log({content})
   if (!content) return <></>;
   let { entry: member = null } = { ...content };
   if (!member) return <></>;
+  
 
   return (
     <section id="profile1" className="py-20">
@@ -47,7 +49,11 @@ export default function TeamMemberProfile({ content }: TeamMemberProfileProps) {
               <h1 className="mb-2 text-4xl font-bold">{member.fullName}</h1>
               <p className="mb-6 text-xl text-gray-600">{member.profile?.position}</p>
               <div className="prose prose-lg">
-                <PortableText value={member.profile?.bio} />
+              {typeof member.profile?.bio === "string" ? (
+                  <p>{member.profile.bio}</p>
+                ) : (
+                  member.profile?.bio && <PortableText value={member.profile?.bio} />
+                )}
               </div>
             </div>
           </div>
