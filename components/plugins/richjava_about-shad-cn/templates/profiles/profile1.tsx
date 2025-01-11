@@ -21,10 +21,12 @@ interface TeamMemberProfileProps {
 }
 
 export default function TeamMemberProfile({ content }: TeamMemberProfileProps) {
+  console.log({content})
   if (!content) return <></>;
   let { entry: member = null } = { ...content };
   if (!member) return <></>;
   
+
   return (
     <section id="profile1" className="py-20">
       <div className="container px-4 mx-auto">
