@@ -4,22 +4,22 @@
       "name": "cover1",
       "title": "Cover 1",
       "category": "covers",
-      "namespace": "richjava_corporate-shad-cn",
+      "namespace": "richjava_corporate-shadcn",
       "description": "Full viewport cover with text content, call-to-action buttons, and a supporting image.",
-      "imageUrl": "https://res.cloudinary.com/dn7feeelf/image/upload/v1733735967/builtjs/theme/richjava_corporate-shad-cn/home-cover1.png"
+      "imageUrl": "https://res.cloudinary.com/dn7feeelf/image/upload/v1733735967/builtjs/theme/richjava_corporate-shadcn/home-cover1.png"
     },
     {
       "name": "header1",
       "title": "Header 1",
       "category": "headers",
-      "namespace": "richjava_corporate-shad-cn",
+      "namespace": "richjava_corporate-shadcn",
       "description": "Main navigation header with logo, links, and action buttons."
     },
     {
       "name": "footer1",
       "title": "Footer 1",
       "category": "footers",
-      "namespace": "richjava_corporate-shad-cn",
+      "namespace": "richjava_corporate-shadcn",
       "description": "Main footer with multiple columns, quick links, and contact information."
     }
   ]
