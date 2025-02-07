@@ -71,6 +71,17 @@
         }
       }
     },
+    "homeSeo": {
+      "name": "homeSeo",
+      "type": "head",
+      "fields": {
+        "pageTitle": { "type": "string" },
+        "description": { "type": "text" },
+        "shareImage": { "type": "image" },
+        "twitterCardType": { "type": "string" },
+        "twitterUsername": { "type": "string" }
+      }
+    },
     "homeLanding": {
       "name": "homeLanding",
       "fields": {

@@ -1,6 +1,81 @@
 {
   "contentTypes": [
     {
+      "name": "testimonial",
+      "title": "Testimonial",
+      "dataPosition": 1,
+      "fields": {
+        "content": {
+          "type": "text",
+          "required": true
+        },
+        "author": {
+          "type": "string",
+          "required": true
+        },
+        "role": {
+          "type": "string",
+          "required": true
+        },
+        "company": {
+          "type": "string",
+          "required": true
+        },
+        "image": {
+          "type": "image",
+          "required": true
+        },
+        "rating": {
+          "type": "number",
+          "required": true,
+          "min": 1,
+          "max": 5
+        }
+      },
+      "namespace": "richjava_social-proof-shadcn"
+    },
+    {
+      "name": "stat",
+      "title": "Statistic",
+      "dataPosition": 1,
+      "fields": {
+        "value": {
+          "type": "string",
+          "required": true
+        },
+        "label": {
+          "type": "string",
+          "required": true
+        },
+        "description": {
+          "type": "text"
+        }
+      },
+      "namespace": "richjava_social-proof-shadcn"
+    },
+    {
+      "name": "primaryMenuItem",
+      "title": "Primary Menu Item",
+      "dataPosition": 1,
+      "fields": {
+        "slug": {
+          "type": "uid",
+          "targetField": "label",
+          "required": true
+        },
+        "label": {
+          "type": "string",
+          "required": true
+        },
+        "url": {
+          "type": "string",
+          "unique": true,
+          "required": true
+        }
+      },
+      "namespace": "richjava_social-proof-shadcn"
+    },
+    {
       "name": "feature",
       "title": "Feature",
       "dataPosition": 1,
@@ -85,165 +160,9 @@
         }
       },
       "namespace": "richjava_about-shadcn"
-    },
-    {
-      "name": "testimonial",
-      "title": "Testimonial",
-      "dataPosition": 1,
-      "fields": {
-        "content": {
-          "type": "text",
-          "required": true
-        },
-        "author": {
-          "type": "string",
-          "required": true
-        },
-        "role": {
-          "type": "string",
-          "required": true
-        },
-        "company": {
-          "type": "string",
-          "required": true
-        },
-        "image": {
-          "type": "image",
-          "required": true
-        },
-        "rating": {
-          "type": "number",
-          "required": true,
-          "min": 1,
-          "max": 5
-        }
-      },
-      "namespace": "richjava_social-proof-shadcn"
-    },
-    {
-      "name": "stat",
-      "title": "Statistic",
-      "dataPosition": 1,
-      "fields": {
-        "value": {
-          "type": "string",
-          "required": true
-        },
-        "label": {
-          "type": "string",
-          "required": true
-        },
-        "description": {
-          "type": "text"
-        }
-      },
-      "namespace": "richjava_social-proof-shadcn"
-    },
-    {
-      "name": "primaryMenuItem",
-      "title": "Primary Menu Item",
-      "dataPosition": 1,
-      "fields": {
-        "slug": {
-          "type": "uid",
-          "targetField": "label",
-          "required": true
-        },
-        "label": {
-          "type": "string",
-          "required": true
-        },
-        "url": {
-          "type": "string",
-          "unique": true,
-          "required": true
-        }
-      },
-      "namespace": "richjava_social-proof-shadcn"
     }
   ],
   "pages": [
-    {
-      "name": "home",
-      "sections": [
-        {
-          "name": "aboutTeaser",
-          "template": "block1"
-        }
-      ],
-      "demoSections": [
-        {
-          "name": "homeLanding"
-        },
-        {
-          "name": "testimonials"
-        },
-        {
-          "name": "aboutTeaser"
-        }
-      ]
-    },
-    {
-      "name": "about",
-      "sections": [
-        {
-          "name": "aboutHero",
-          "template": "cover1"
-        },
-        {
-          "name": "aboutContent",
-          "template": "block2"
-        },
-        {
-          "name": "teamSection",
-          "template": "cards1"
-        }
-      ],
-      "demoSections": [
-        {
-          "name": "aboutHero"
-        },
-        {
-          "name": "aboutContent"
-        },
-        {
-          "name": "testimonialStats"
-        },
-        {
-          "name": "teamSection"
-        },
-        {
-          "name": "testimonialsFeatured"
-        },
-        {
-          "name": "testimonialsList"
-        }
-      ]
-    },
-    {
-      "name": "teamMemberArticle",
-      "contentType": {
-        "name": "teamMember",
-        "config": {
-          "populate": [
-            {
-              "name": "profile"
-            }
-          ]
-        }
-      },
-      "sections": [
-        {
-          "name": "teamMemberProfile",
-          "template": "profile1"
-        }
-      ],
-      "demoSections": [
-        {
-          "name": "teamMemberProfile"
-        }
-      ]
-    },
     {
       "name": "home",
       "sections": [
@@ -253,6 +172,9 @@
         }
       ],
       "demoSections": [
+        {
+          "name": "homeSeo"
+        },
         {
           "name": "homeLanding"
         },
@@ -282,208 +204,117 @@
       ],
       "demoSections": [
         {
+          "name": "aboutSeo"
+        },
+        {
+          "name": "testimonialStats"
+        },
+        {
           "name": "aboutHero"
         },
         {
           "name": "aboutContent"
         },
         {
-          "name": "testimonialStats"
+          "name": "testimonialsFeatured"
         },
         {
           "name": "teamSection"
         },
         {
+          "name": "testimonialsList"
+        }
+      ]
+    },
+    {
+      "name": "home",
+      "sections": [
+        {
+          "name": "aboutTeaser",
+          "template": "block1"
+        }
+      ],
+      "demoSections": [
+        {
+          "name": "homeSeo"
+        },
+        {
+          "name": "homeLanding"
+        },
+        {
+          "name": "testimonials"
+        },
+        {
+          "name": "aboutTeaser"
+        }
+      ]
+    },
+    {
+      "name": "about",
+      "sections": [
+        {
+          "name": "aboutHero",
+          "template": "cover1"
+        },
+        {
+          "name": "aboutContent",
+          "template": "block2"
+        },
+        {
+          "name": "teamSection",
+          "template": "cards1"
+        }
+      ],
+      "demoSections": [
+        {
+          "name": "aboutSeo"
+        },
+        {
+          "name": "testimonialStats"
+        },
+        {
+          "name": "aboutHero"
+        },
+        {
+          "name": "aboutContent"
+        },
+        {
           "name": "testimonialsFeatured"
+        },
+        {
+          "name": "teamSection"
         },
         {
           "name": "testimonialsList"
         }
       ]
+    },
+    {
+      "name": "teamMemberArticle",
+      "contentType": {
+        "name": "teamMember",
+        "config": {
+          "populate": [
+            {
+              "name": "profile"
+            }
+          ]
+        }
+      },
+      "sections": [
+        {
+          "name": "teamMemberProfile",
+          "template": "profile1"
+        }
+      ],
+      "demoSections": [
+        {
+          "name": "teamMemberProfile"
+        }
+      ]
     }
   ],
   "sections": [
-    {
-      "name": "header",
-      "title": "Header",
-      "description": "The main navigation header of the website.",
-      "collections": {
-        "primaryMenuItem": {}
-      },
-      "templates": [
-        "header1"
-      ],
-      "type": "layout",
-      "defaultTemplate": {
-        "name": "header1"
-      },
-      "data": {}
-    },
-    {
-      "name": "aboutHero",
-      "title": "About Hero",
-      "description": "The about page hero section with heading, blurb, and image.",
-      "data": {
-        "heading": "About Us",
-        "blurb": "Discover beautifully designed components that you can copy and paste into your apps. Free. Open Source.",
-        "image": {
-          "url": "https://images.unsplash.com/photo-1618477388954-7852f32655ec?w=800&h=400&fit=crop",
-          "width": 800,
-          "height": 400
-        }
-      },
-      "templates": [
-        "cover1"
-      ],
-      "type": "body",
-      "defaultTemplate": {
-        "name": "cover1"
-      },
-      "namespace": "richjava_about-shadcn"
-    },
-    {
-      "name": "aboutTeaser",
-      "title": "About Teaser",
-      "description": "A teaser section that leads to the about page.",
-      "data": {
-        "heading": "Why Choose Us?",
-        "blurb": "Build your next project faster with beautifully crafted components that are accessible, customizable, and open source."
-      },
-      "templates": [
-        "block1"
-      ],
-      "type": "body",
-      "defaultTemplate": {
-        "name": "block1"
-      },
-      "namespace": "richjava_about-shadcn"
-    },
-    {
-      "name": "aboutContent",
-      "title": "About Content",
-      "description": "Main content section with mission and features.",
-      "data": {
-        "heading": "Our Mission",
-        "mission": "Our business is on the belief that beautiful, accessible, and performant web applications should be easy to create. We provide a collection of reusable components that you can copy and paste into your apps.",
-        "featuresHeading": "Key Features"
-      },
-      "collections": {
-        "feature": {}
-      },
-      "templates": [
-        "block2"
-      ],
-      "type": "body",
-      "defaultTemplate": {
-        "name": "block2"
-      },
-      "namespace": "richjava_about-shadcn"
-    },
-    {
-      "name": "teamSection",
-      "title": "Team Section",
-      "description": "Section showcasing team members.",
-      "data": {
-        "heading": "Meet Our Team"
-      },
-      "collections": {
-        "teamMember": {
-          "config": {
-            "limit": 3,
-            "populate": [
-              {
-                "name": "profile"
-              }
-            ]
-          }
-        }
-      },
-      "templates": [
-        "cards1"
-      ],
-      "type": "body",
-      "defaultTemplate": {
-        "name": "cards1"
-      },
-      "namespace": "richjava_about-shadcn"
-    },
-    {
-      "name": "teamMemberProfile",
-      "title": "Team Member Profile",
-      "description": "Detailed profile page for a team member.",
-      "templates": [
-        "profile1"
-      ],
-      "type": "body",
-      "defaultTemplate": {
-        "name": "profile1"
-      },
-      "namespace": "richjava_about-shadcn"
-    },
-    {
-      "name": "footer",
-      "title": "Footer",
-      "description": "The main footer of the website.",
-      "templates": [
-        "footer1"
-      ],
-      "type": "layout",
-      "defaultTemplate": {
-        "name": "footer1"
-      },
-      "data": {
-        "columns": [
-          {
-            "title": "Quick Links",
-            "links": [
-              {
-                "label": "Home",
-                "href": "/"
-              },
-              {
-                "label": "About",
-                "href": "/about"
-              },
-              {
-                "label": "Services",
-                "href": "/services"
-              },
-              {
-                "label": "Contact",
-                "href": "/contact"
-              }
-            ]
-          },
-          {
-            "title": "Services",
-            "links": [
-              {
-                "label": "Consulting",
-                "href": "#"
-              },
-              {
-                "label": "Development",
-                "href": "#"
-              },
-              {
-                "label": "Analytics",
-                "href": "#"
-              },
-              {
-                "label": "Marketing",
-                "href": "#"
-              }
-            ]
-          }
-        ],
-        "contactInfo": {
-          "address": "123 Business Street",
-          "city": "City, State 12345",
-          "email": "contact@corporate-shadcn.com",
-          "phone": "(555) 123-4567"
-        }
-      }
-    },
     {
       "name": "testimonials",
       "title": "Testimonials Grid",
@@ -600,6 +431,205 @@
       "namespace": "richjava_social-proof-shadcn"
     },
     {
+      "name": "aboutSeo",
+      "data": {
+        "pageTitle": "About | Social Proof ShadCN Built.JS Plugin",
+        "description": "About page for a site built with the Social Proof ShadCN Built.js Plugin.",
+        "shareImage": {
+          "url": "https://res.cloudinary.com/dn7feeelf/image/upload/v1733735967/builtjs/theme/richjava_corporate-shad-cn/home-cover1.png",
+          "width": 1280,
+          "height": 768
+        },
+        "twitterCardType": "summary"
+      },
+      "templates": [
+        "seo"
+      ],
+      "type": "head",
+      "defaultTemplate": {
+        "name": "seo"
+      },
+      "collections": {},
+      "namespace": "richjava_social-proof-shadcn"
+    },
+    {
+      "name": "header",
+      "title": "Header",
+      "description": "Main navigation header with logo and menu items.",
+      "collections": {
+        "primaryMenuItem": {}
+      },
+      "templates": [
+        "header1"
+      ],
+      "type": "layout",
+      "defaultTemplate": {
+        "name": "header1"
+      },
+      "namespace": "richjava_about-shadcn"
+    },
+    {
+      "name": "aboutSeo",
+      "title": "About SEO",
+      "data": {
+        "pageTitle": "About | About ShadCN Built.js Plugin",
+        "description": "About page for a site built with the About ShadCN Built.js Plugin.",
+        "shareImage": {
+          "url": "https://res.cloudinary.com/dn7feeelf/image/upload/v1725878797/image_ldyekv.png",
+          "path": "/images/image.png",
+          "width": 1280,
+          "height": 768,
+          "type": "image"
+        },
+        "twitterCardType": "summary"
+      },
+      "templates": [
+        "seo"
+      ],
+      "type": "head",
+      "defaultTemplate": {
+        "name": "seo"
+      },
+      "collections": {},
+      "namespace": "richjava_about-shadcn"
+    },
+    {
+      "name": "aboutHero",
+      "title": "About Hero",
+      "description": "The about page hero section with heading, blurb, and image.",
+      "data": {
+        "heading": "About Us",
+        "blurb": "Discover beautifully designed components that you can copy and paste into your apps. Free. Open Source.",
+        "image": {
+          "url": "https://images.unsplash.com/photo-1618477388954-7852f32655ec?w=800&h=400&fit=crop",
+          "width": 800,
+          "height": 400
+        }
+      },
+      "templates": [
+        "cover1"
+      ],
+      "type": "body",
+      "defaultTemplate": {
+        "name": "cover1"
+      },
+      "namespace": "richjava_about-shadcn"
+    },
+    {
+      "name": "aboutTeaser",
+      "title": "About Teaser",
+      "description": "A teaser section that leads to the about page.",
+      "data": {
+        "heading": "Why Choose Us?",
+        "blurb": "Build your next project faster with beautifully crafted components that are accessible, customizable, and open source."
+      },
+      "templates": [
+        "block1"
+      ],
+      "type": "body",
+      "defaultTemplate": {
+        "name": "block1"
+      },
+      "namespace": "richjava_about-shadcn"
+    },
+    {
+      "name": "aboutContent",
+      "title": "About Content",
+      "description": "Main content section with mission and features.",
+      "data": {
+        "heading": "Our Mission",
+        "mission": "Our business is on the belief that beautiful, accessible, and performant web applications should be easy to create. We provide a collection of reusable components that you can copy and paste into your apps.",
+        "featuresHeading": "Key Features"
+      },
+      "collections": {
+        "feature": {}
+      },
+      "templates": [
+        "block2"
+      ],
+      "type": "body",
+      "defaultTemplate": {
+        "name": "block2"
+      },
+      "namespace": "richjava_about-shadcn"
+    },
+    {
+      "name": "teamSection",
+      "title": "Team Section",
+      "description": "Section showcasing team members.",
+      "data": {
+        "heading": "Meet Our Team"
+      },
+      "collections": {
+        "teamMember": {
+          "config": {
+            "limit": 3,
+            "populate": [
+              {
+                "name": "profile"
+              }
+            ]
+          }
+        }
+      },
+      "templates": [
+        "cards1"
+      ],
+      "type": "body",
+      "defaultTemplate": {
+        "name": "cards1"
+      },
+      "namespace": "richjava_about-shadcn"
+    },
+    {
+      "name": "teamMemberProfile",
+      "title": "Team Member Profile",
+      "description": "Detailed profile page for a team member.",
+      "templates": [
+        "profile1"
+      ],
+      "type": "body",
+      "defaultTemplate": {
+        "name": "profile1"
+      },
+      "namespace": "richjava_about-shadcn"
+    },
+    {
+      "name": "footer",
+      "title": "Footer",
+      "description": "Site footer with copyright information.",
+      "templates": [
+        "footer1"
+      ],
+      "type": "layout",
+      "defaultTemplate": {
+        "name": "footer1"
+      },
+      "namespace": "richjava_about-shadcn"
+    },
+    {
+      "name": "homeSeo",
+      "title": "Home SEO",
+      "data": {
+        "pageTitle": "Home | Corporate ShadCN Built.JS Theme",
+        "description": "Home page for a site built with the Corporate ShadCN Built.js Theme.",
+        "shareImage": {
+          "url": "https://res.cloudinary.com/dn7feeelf/image/upload/v1733735967/builtjs/theme/richjava_corporate-shad-cn/home-cover1.png",
+          "width": 1280,
+          "height": 768
+        },
+        "twitterCardType": "summary"
+      },
+      "templates": [
+        "seo"
+      ],
+      "type": "head",
+      "defaultTemplate": {
+        "name": "seo"
+      },
+      "collections": {}
+    },
+    {
       "name": "homeLanding",
       "title": "Home Landing",
       "description": "The home page landing area, showcasing the main value proposition.",
@@ -625,6 +655,59 @@
   ],
   "templates": [
     {
+      "name": "testimonials1",
+      "title": "Testimonials Grid",
+      "category": "testimonials",
+      "namespace": "richjava_social-proof-shadcn",
+      "description": "A grid layout of customer testimonials with ratings and profile images.",
+      "imageUrl": "https://res.cloudinary.com/dn7feeelf/image/upload/v1733728008/builtjs/plugin/richjava_social-proof-shad-cn/home-testimonials1.png"
+    },
+    {
+      "name": "testimonials2",
+      "title": "Testimonials List",
+      "category": "testimonials",
+      "namespace": "richjava_social-proof-shadcn",
+      "description": "A vertical list of detailed testimonials with expanded content.",
+      "imageUrl": "https://res.cloudinary.com/dn7feeelf/image/upload/v1733728013/builtjs/plugin/richjava_social-proof-shad-cn/about-testimonials2.png"
+    },
+    {
+      "name": "testimonials3",
+      "title": "Featured Testimonials",
+      "category": "testimonials",
+      "namespace": "richjava_social-proof-shadcn",
+      "description": "A carousel of featured testimonials with company logos.",
+      "imageUrl": "https://res.cloudinary.com/dn7feeelf/image/upload/v1733728012/builtjs/plugin/richjava_social-proof-shad-cn/about-testimonials3.png"
+    },
+    {
+      "name": "stats1",
+      "title": "Statistics Grid",
+      "category": "stats",
+      "namespace": "richjava_social-proof-shadcn",
+      "description": "A grid of key statistics with animations.",
+      "imageUrl": "https://res.cloudinary.com/dn7feeelf/image/upload/v1733728011/builtjs/plugin/richjava_social-proof-shad-cn/about-stats1.png"
+    },
+    {
+      "name": "header1",
+      "title": "Header 1",
+      "category": "headers",
+      "namespace": "richjava_social-proof-shadcn",
+      "description": "A responsive header with logo, site title, and navigation menu."
+    },
+    {
+      "name": "footer1",
+      "title": "Footer 1",
+      "category": "footers",
+      "namespace": "richjava_social-proof-shadcn",
+      "description": "A comprehensive footer with logo, description, quick links, and social media icons."
+    },
+    {
+      "name": "seo",
+      "title": "SEO",
+      "category": "head",
+      "namespace": "richjava_social-proof-shadcn",
+      "description": "Define SEO meta titles, meta descriptions and social media meta data."
+    },
+    {
       "name": "header1",
       "title": "Header 1",
       "category": "headers",
@@ -644,7 +727,7 @@
       "category": "covers",
       "namespace": "richjava_about-shadcn",
       "description": "Hero section with heading, blurb, and supporting image.",
-      "imageUrl": "https://res.cloudinary.com/dn7feeelf/image/upload/v1733645412/builtjs/plugin/richjava_about-shadcn/about-cover1.png"
+      "imageUrl": "https://res.cloudinary.com/dn7feeelf/image/upload/v1733645412/builtjs/plugin/richjava_about-shad-cn/about-cover1.png"
     },
     {
       "name": "block1",
@@ -652,7 +735,7 @@
       "category": "blocks",
       "namespace": "richjava_about-shadcn",
       "description": "Teaser block with heading, blurb, and call-to-action.",
-      "imageUrl": "https://res.cloudinary.com/dn7feeelf/image/upload/v1733604040/builtjs/plugin/richjava_about-shadcn/home-block1.png"
+      "imageUrl": "https://res.cloudinary.com/dn7feeelf/image/upload/v1733604040/builtjs/plugin/richjava_about-shad-cn/home-block1.png"
     },
     {
       "name": "block2",
@@ -660,7 +743,7 @@
       "category": "blocks",
       "namespace": "richjava_about-shadcn",
       "description": "Content block with mission statement and feature grid.",
-      "imageUrl": "https://res.cloudinary.com/dn7feeelf/image/upload/v1733604035/builtjs/plugin/richjava_about-shadcn/about-block2.png"
+      "imageUrl": "https://res.cloudinary.com/dn7feeelf/image/upload/v1733604035/builtjs/plugin/richjava_about-shad-cn/about-block2.png"
     },
     {
       "name": "cards1",
@@ -668,7 +751,7 @@
       "category": "cards",
       "namespace": "richjava_about-shadcn",
       "description": "Grid of team member cards with images and details.",
-      "imageUrl": "https://res.cloudinary.com/dn7feeelf/image/upload/v1733652216/builtjs/plugin/richjava_about-shadcn/about-cards1.png"
+      "imageUrl": "https://res.cloudinary.com/dn7feeelf/image/upload/v1733652216/builtjs/plugin/richjava_about-shad-cn/about-cards1.png"
     },
     {
       "name": "profile1",
@@ -676,53 +759,14 @@
       "category": "profiles",
       "namespace": "richjava_about-shadcn",
       "description": "Article section with hero image for introducing authors.",
-      "imageUrl": "https://res.cloudinary.com/dn7feeelf/image/upload/v1733652242/builtjs/plugin/richjava_about-shadcn/team-member-profile1.png"
+      "imageUrl": "https://res.cloudinary.com/dn7feeelf/image/upload/v1733652242/builtjs/plugin/richjava_about-shad-cn/team-member-profile1.png"
     },
     {
-      "name": "testimonials1",
-      "title": "Testimonials Grid",
-      "category": "testimonials",
-      "namespace": "richjava_social-proof-shadcn",
-      "description": "A grid layout of customer testimonials with ratings and profile images.",
-      "imageUrl": "https://res.cloudinary.com/dn7feeelf/image/upload/v1733728008/builtjs/plugin/richjava_social-proof-shadcn/home-testimonials1.png"
-    },
-    {
-      "name": "testimonials2",
-      "title": "Testimonials List",
-      "category": "testimonials",
-      "namespace": "richjava_social-proof-shadcn",
-      "description": "A vertical list of detailed testimonials with expanded content.",
-      "imageUrl": "https://res.cloudinary.com/dn7feeelf/image/upload/v1733728013/builtjs/plugin/richjava_social-proof-shadcn/about-testimonials2.png"
-    },
-    {
-      "name": "testimonials3",
-      "title": "Featured Testimonials",
-      "category": "testimonials",
-      "namespace": "richjava_social-proof-shadcn",
-      "description": "A carousel of featured testimonials with company logos.",
-      "imageUrl": "https://res.cloudinary.com/dn7feeelf/image/upload/v1733728012/builtjs/plugin/richjava_social-proof-shadcn/about-testimonials3.png"
-    },
-    {
-      "name": "stats1",
-      "title": "Statistics Grid",
-      "category": "stats",
-      "namespace": "richjava_social-proof-shadcn",
-      "description": "A grid of key statistics with animations.",
-      "imageUrl": "https://res.cloudinary.com/dn7feeelf/image/upload/v1733728011/builtjs/plugin/richjava_social-proof-shadcn/about-stats1.png"
-    },
-    {
-      "name": "header1",
-      "title": "Header 1",
-      "category": "headers",
-      "namespace": "richjava_social-proof-shadcn",
-      "description": "A responsive header with logo, site title, and navigation menu."
-    },
-    {
-      "name": "footer1",
-      "title": "Footer 1",
-      "category": "footers",
-      "namespace": "richjava_social-proof-shadcn",
-      "description": "A comprehensive footer with logo, description, quick links, and social media icons."
+      "name": "seo",
+      "title": "SEO",
+      "category": "head",
+      "namespace": "richjava_about-shadcn",
+      "description": "Define SEO meta titles, meta descriptions and social media meta data."
     },
     {
       "name": "cover1",
@@ -730,7 +774,7 @@
       "category": "covers",
       "namespace": "richjava_corporate-shadcn",
       "description": "Full viewport cover with text content, call-to-action buttons, and a supporting image.",
-      "imageUrl": "https://res.cloudinary.com/dn7feeelf/image/upload/v1733735967/builtjs/theme/richjava_corporate-shadcn/home-cover1.png"
+      "imageUrl": "https://res.cloudinary.com/dn7feeelf/image/upload/v1733735967/builtjs/theme/richjava_corporate-shad-cn/home-cover1.png"
     },
     {
       "name": "header1",
@@ -745,6 +789,13 @@
       "category": "footers",
       "namespace": "richjava_corporate-shadcn",
       "description": "Main footer with multiple columns, quick links, and contact information."
+    },
+    {
+      "name": "seo",
+      "title": "SEO",
+      "category": "head",
+      "namespace": "richjava_corporate-shadcn",
+      "description": "Define SEO meta titles, meta descriptions and social media meta data."
     }
   ],
   "layout": {
@@ -759,6 +810,102 @@
     ]
   },
   "collections": {
+    "primaryMenuItems": [
+      {
+        "_id": "menu-item-1",
+        "slug": "home",
+        "_type": "primaryMenuItem",
+        "label": "Home",
+        "url": "/"
+      },
+      {
+        "_id": "menu-item-2",
+        "slug": "about",
+        "_type": "primaryMenuItem",
+        "label": "About",
+        "url": "/about"
+      }
+    ],
+    "stats": [
+      {
+        "_id": "stat-1",
+        "_type": "stat",
+        "label": "Customer Satisfaction",
+        "value": "98%",
+        "description": "Our customers consistently rate their experience as excellent"
+      },
+      {
+        "_id": "stat-2",
+        "_type": "stat",
+        "label": "Support Available",
+        "value": "24/7",
+        "description": "Round-the-clock assistance for all your needs"
+      },
+      {
+        "_id": "stat-3",
+        "_type": "stat",
+        "label": "Happy Clients",
+        "value": "500+",
+        "description": "Growing number of satisfied customers worldwide"
+      },
+      {
+        "_id": "stat-4",
+        "_type": "stat",
+        "label": "Average Rating",
+        "value": "4.9/5",
+        "description": "Consistently high ratings across all platforms"
+      }
+    ],
+    "testimonials": [
+      {
+        "_id": "testimonial-1",
+        "_type": "testimonial",
+        "id": 1,
+        "title": "Game changer",
+        "content": "This product has completely transformed our workflow. The efficiency gains are remarkable!",
+        "author": "Sarah Johnson",
+        "role": "Product Manager",
+        "company": "TechCorp",
+        "image": {
+          "url": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=crop&w=128&h=128&q=80",
+          "width": 128,
+          "height": 128
+        },
+        "rating": 5
+      },
+      {
+        "_id": "testimonial-2",
+        "_type": "testimonial",
+        "id": 2,
+        "title": "Pleasing experience",
+        "content": "The best solution we've found in the market. Customer support is outstanding!",
+        "author": "Michael Chen",
+        "role": "CTO",
+        "company": "InnovateLabs",
+        "image": {
+          "url": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&auto=format&fit=crop&w=128&h=128&q=80",
+          "width": 128,
+          "height": 128
+        },
+        "rating": 5
+      },
+      {
+        "_id": "testimonial-3",
+        "_type": "testimonial",
+        "id": 3,
+        "title": "Great value",
+        "content": "Incredible value for money. We've seen a 200% ROI since implementing this solution.",
+        "author": "Emily Rodriguez",
+        "role": "Operations Director",
+        "company": "GlobalTech",
+        "image": {
+          "url": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&auto=format&fit=crop&w=128&h=128&q=80",
+          "width": 128,
+          "height": 128
+        },
+        "rating": 5
+      }
+    ],
     "authors": [
       {
         "_id": "author-1",
@@ -811,22 +958,6 @@
         "_type": "feature",
         "title": "Open Source Freedom",
         "description": "MIT licensed and free to use in personal and commercial projects, with an active community of contributors."
-      }
-    ],
-    "primaryMenuItems": [
-      {
-        "_id": "menu-item-1",
-        "_type": "primaryMenuItem",
-        "label": "Home",
-        "slug": "home",
-        "url": "/"
-      },
-      {
-        "_id": "menu-item-2",
-        "_type": "primaryMenuItem",
-        "label": "About",
-        "slug": "about",
-        "url": "/about"
       }
     ],
     "profiles": [
@@ -930,83 +1061,6 @@
         "fullName": "Michael Foster",
         "slug": "michael-foster",
         "profile": "profile-3"
-      }
-    ],
-    "stats": [
-      {
-        "_id": "stat-1",
-        "_type": "stat",
-        "value": "98%",
-        "label": "Customer Satisfaction",
-        "description": "Our customers consistently rate their experience as excellent"
-      },
-      {
-        "_id": "stat-2",
-        "_type": "stat",
-        "value": "24/7",
-        "label": "Support Available",
-        "description": "Round-the-clock assistance for all your needs"
-      },
-      {
-        "_id": "stat-3",
-        "_type": "stat",
-        "value": "500+",
-        "label": "Happy Clients",
-        "description": "Growing number of satisfied customers worldwide"
-      },
-      {
-        "_id": "stat-4",
-        "_type": "stat",
-        "value": "4.9/5",
-        "label": "Average Rating",
-        "description": "Consistently high ratings across all platforms"
-      }
-    ],
-    "testimonials": [
-      {
-        "_id": "testimonial-1",
-        "_type": "testimonial",
-        "id": 1,
-        "content": "This product has completely transformed our workflow. The efficiency gains are remarkable!",
-        "author": "Sarah Johnson",
-        "role": "Product Manager",
-        "company": "TechCorp",
-        "image": {
-          "url": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=crop&w=128&h=128&q=80",
-          "width": 128,
-          "height": 128
-        },
-        "rating": 5
-      },
-      {
-        "_id": "testimonial-2",
-        "_type": "testimonial",
-        "id": 2,
-        "content": "The best solution we've found in the market. Customer support is outstanding!",
-        "author": "Michael Chen",
-        "role": "CTO",
-        "company": "InnovateLabs",
-        "image": {
-          "url": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&auto=format&fit=crop&w=128&h=128&q=80",
-          "width": 128,
-          "height": 128
-        },
-        "rating": 5
-      },
-      {
-        "_id": "testimonial-3",
-        "_type": "testimonial",
-        "id": 3,
-        "content": "Incredible value for money. We've seen a 200% ROI since implementing this solution.",
-        "author": "Emily Rodriguez",
-        "role": "Operations Director",
-        "company": "GlobalTech",
-        "image": {
-          "url": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&auto=format&fit=crop&w=128&h=128&q=80",
-          "width": 128,
-          "height": 128
-        },
-        "rating": 5
       }
     ]
   },

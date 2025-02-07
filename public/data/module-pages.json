@@ -7,10 +7,8 @@
         "name": "home"
       },
       "sections": [
-        {
-          "name": "homeLanding",
-          "position": 1
-        }
+        { "name": "homeSeo", "position": 1 },
+        { "name": "homeLanding", "position": 2 }
       ]
     }
   ]

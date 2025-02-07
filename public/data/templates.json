@@ -21,6 +21,12 @@
       "category": "footers",
       "namespace": "richjava_corporate-shadcn",
       "description": "Main footer with multiple columns, quick links, and contact information."
+    },{
+      "name": "seo",
+      "title": "SEO",
+      "category": "head",
+      "namespace": "richjava_corporate-shadcn",
+      "description": "Define SEO meta titles, meta descriptions and social media meta data."
     }
   ]
 }
