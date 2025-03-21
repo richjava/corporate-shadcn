@@ -1,5 +1,4 @@
 import type { AppProps } from "next/app";
-import "@/styles/plugins/richjava_about-shadcn/globals.css";
 import "@/styles/plugins/richjava_social-proof-shadcn/globals.css";
 import "@/styles/globals.css";
 
