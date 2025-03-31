@@ -22,6 +22,7 @@
       "name": "homeLanding",
       "title": "Home Landing",
       "description": "The home page landing area, showcasing the main value proposition.",
+      "imageUrl": "https://res.cloudinary.com/dn7feeelf/image/upload/v1733735967/builtjs/theme/richjava_corporate-shad-cn/home-cover1.png",
       "data": {
         "heading": "Transform Your Business with Modern Solutions",
         "blurb": "Empower your organization with cutting-edge technology and expert consulting services. We help businesses thrive in the digital age.",
