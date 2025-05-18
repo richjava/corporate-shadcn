@@ -21,7 +21,7 @@ export default function Cover1({ content }: { content?: CoverContent }) {
   
   return (
     <section className="py-24 md:py-32 bg-gradient-to-br from-gray-50 to-gray-100">
-      <div className="container px-4 md:px-8">
+      <div className="container mx-auto px-4 md:px-8">
         <div className="max-w-3xl mx-auto text-center">
           <h1 className="text-4xl md:text-6xl font-bold tracking-tighter mb-6">
             {data?.heading || "Transform Your Business with Modern Solutions"}
