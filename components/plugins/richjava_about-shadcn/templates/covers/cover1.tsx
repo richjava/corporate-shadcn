@@ -22,7 +22,7 @@ export default function AboutHero({ content }: AboutHeroProps) {
 
   return (
     <section id="cover1" className="py-24 bg-gray-50">
-      <div className="container mx-auto px-4 mx-auto">
+      <div className="container px-4 mx-auto">
         <div className="max-w-3xl mx-auto text-center">
           <h1 className="mb-6 text-4xl font-bold">{heading}</h1>
           <p className="text-xl text-gray-600">{blurb}</p>
